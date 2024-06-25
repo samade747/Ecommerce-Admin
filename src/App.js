@@ -13,10 +13,13 @@ import NewProduct from "./pages/newProduct/NewProduct";
 function App() {
   return (
     <Router>
-      <Topbar />
+      <Switch>
+      <Topbar />      
+      <Route path="/login">
+            <Login />
+          </Route>    
       <div className="container">
-        <Sidebar />
-        <Switch>
+        <Sidebar />       
           <Route exact path="/">
             <Home />
           </Route>
@@ -38,8 +41,9 @@ function App() {
           <Route path="/newproduct">
             <NewProduct />
           </Route>
-        </Switch>
+              
       </div>
+      </Switch>
     </Router>
   );
 }
