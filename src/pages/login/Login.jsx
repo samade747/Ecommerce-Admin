@@ -17,12 +17,23 @@ const login = () => {
     }
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column'}}>
-        <input type="text"
+    <div 
+    style={{
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: "center" ,
+      justifyContent: 'center'
+      }}>
+        <input
+        style={{padding: '10px', marginBottom: '20px'}}
+         type="text"
          placeholder='username'
           onChange={e => setUsername(e.target.value)} 
         />
-        <input type="password"
+        <input
+        style={{padding: '10px'}}
+         type="password"
          placeholder='password'
          onChange={e => setPassword(e.target.value) }/>
 
