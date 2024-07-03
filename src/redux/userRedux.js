@@ -1,31 +1,61 @@
-import {createSlice, current} from "@reduxjs/toolkit";
+// userRedux.js
+import { createSlice } from '@reduxjs/toolkit';
 
 const userSlice = createSlice({
-    name: "user",
+    name: 'user',
     initialState: {
         currentUser: null,
-        isFetching : false,
-        error : false,
+        isFetching: false,
+        error: false,
     },
     reducers: {
         loginStart: (state) => {
-            state.isFetching = true
+            state.isFetching = true;
         },
         loginSuccess: (state, action) => {
-            state.isFetching = false
+            state.isFetching = false;
             state.currentUser = action.payload;
         },
         loginFailure: (state) => {
             state.isFetching = false;
-            state.error = true;            
+            state.error = true;
         },
-        logout: (state) => {
-            
-            state.currentUser = null;
-        }
-    }
+    },
 });
 
-export const {loginStart, loginSuccess, loginFailure, logout} = userSlice.actions;
-export default userSlice.reducer
+export const { loginStart, loginSuccess, loginFailure } = userSlice.actions;
+export default userSlice.reducer;
+
+
+
+// import {createSlice, current} from "@reduxjs/toolkit";
+
+// const userSlice = createSlice({
+//     name: "user",
+//     initialState: {
+//         currentUser: null,
+//         isFetching : false,
+//         error : false,
+//     },
+//     reducers: {
+//         loginStart: (state) => {
+//             state.isFetching = true
+//         },
+//         loginSuccess: (state, action) => {
+//             state.isFetching = false
+//             state.currentUser = action.payload;
+//         },
+//         loginFailure: (state) => {
+//             state.isFetching = false;
+//             state.error = true;            
+//         },
+//         logout: (state) => {
+            
+//             state.currentUser = null;
+//         }
+//     }
+// });
+
+// export const {loginStart, loginSuccess, loginFailure, logout} = userSlice.actions;
+// export default userSlice.reducer
      

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
-import { publicRequest } from "../requestMethods";
+// import { publicRequest } from "../requestMethods";
 
 
 
@@ -16,3 +16,4 @@ export const login = async (dispatch, user) => {
 }
 
 // 12553
+

@@ -1,18 +1,19 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react';
+// import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loginFailure, loginStart, loginSuccess } from '../../redux/userRedux'
+// import { loginFailure, loginStart, loginSuccess } from '../../redux/userRedux'
 import { login } from '../../redux/apiCalls'
 
 
-const login = () => {
+const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         e.preventDefault()
         login(dispatch, {username, password})
+        
 
     }
 
@@ -42,4 +43,4 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
