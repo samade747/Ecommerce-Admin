@@ -1,6 +1,20 @@
 import "./widgetLg.css";
 
 export default function WidgetLg() {
+  const [Orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const res = await axios.get("/users?new=true");
+        setUsers(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getUsers();
+  }, []);
+
   const Button = ({ type }) => {
     return <button className={"widgetLgButton " + type}>{type}</button>;
   };
